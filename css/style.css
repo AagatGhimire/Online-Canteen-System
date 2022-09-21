@@ -1,0 +1,62 @@
+/*
+    Online Canteen System 
+*/
+
+/* Global*/
+*{
+    font-family: DK Crayon Crumble;
+}  
+
+/*Experiment
+.container{
+    border: 1px solid red;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1%;
+}
+*/
+
+.main_title{
+    text-align: center;
+    font-size: 64px;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.clearfix{
+    clear: both;
+    float: none;
+}
+
+/* Image Respolution */
+.image_res{
+    width: 100%;
+    height: 100%;
+}
+
+/* CSS For Navigation Bar Satrts Here*/
+.logo{
+    border: 1px solid;
+    width: 5%;
+    height: 5%;
+    float: left;
+}
+
+.menu{
+    line-height: 70px;
+} 
+
+.menu ul{
+    list-style-type: none;
+}
+
+.menu ul li{
+    display: inline;
+}
+
+
+/* CSS For Navigation Bar Ends Here*/
+
+
