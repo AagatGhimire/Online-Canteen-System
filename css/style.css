@@ -7,6 +7,32 @@
     font-family: DK Crayon Crumble;
 }  
 
+/* Background Image:- Failed
+1. appying background image on body  
+body{
+    background-image: url("Photo/blackboard.jpg");
+}
+
+2.using div id: bg
+#bg {
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+  }
+  #bg img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 50%;
+    min-height: 50%;
+  }
+*/
+
 /*Experiment
 .container{
     border: 1px solid red;
@@ -18,12 +44,28 @@
 
 .main_title{
     text-align: center;
+    font-weight: bold;
     font-size: 64px;
 }
 
+.small_heading{
+    font-weight: bold;
+    font-size: 50px;
+}
+/* Text alignment begins here */
 .text-right{
     text-align: right;
 }
+
+.text-left{
+    text-align: left;
+}
+
+.text-center{
+    text-align: center;
+}
+/* Text alignment Ends here */
+
 
 .clearfix{
     clear: both;
@@ -36,7 +78,28 @@
     height: 100%;
 }
 
+.food_img{
+    width: 300px;  
+    height: auto;  
+    text-align: center;  
+    padding: 5px;
+    position: relative;
+    left: 75%;    
+}
+
+.drink_img{
+    width: 300px;  
+    height: auto;  
+    text-align: center;  
+    padding: 5px;
+    position: absolute;    
+}
 /* CSS For Navigation Bar Satrts Here*/
+.nav_bar{
+    width: 100%;
+    border: 1px groove black;
+}
+
 .logo{
     border: 1px solid;
     width: 5%;
@@ -59,4 +122,14 @@
 
 /* CSS For Navigation Bar Ends Here*/
 
-
+.underline {
+    text-decoration: underline;
+    background-repeat: repeat-x;
+  }
+/*.underline_chalk{
+     background-image: url("https://flyclipart.com/thumb2/chalk-brush-transparent-png-image-613235.png");
+    /*background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/78779/star.svg");
+    background-size: 16px 10px;*/
+    /*background-position: 0 1.06em;
+    background-size: 46px 1px; 
+}*/
