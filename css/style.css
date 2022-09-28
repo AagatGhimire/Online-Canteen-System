@@ -91,10 +91,19 @@ body{
     color: bisque;
 }
 
+th, td {
+    padding: 15px;
+  }
+
 .food{
-    display: flex;
+    /* display: flex; */
     color: white;
 }
+
+.food_area{
+    display: flex;
+}
+
 .food_img{
     width: 30%;
     /* flex-direction: column; */
@@ -121,6 +130,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* height: 50%; */
 }
 
 .food_section ul{
@@ -130,15 +140,32 @@ body{
     padding: 9px 0px;
 }
 
-/* .food_list{
-    display: inline;
-} */
+.food_list{
+    width: 15%;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.non_veg{
+    color: #EE4B2B;
+    padding-left: 3%;
+}
+
+.veg{
+    color: #32CD32;
+    padding-left: 3%;
+}
 
 .drink{
-    display: flex;
-    flex-direction: row-reverse;
+    /* display: flex;
+    flex-direction: row-reverse; */
     color: white;
     flex-wrap: wrap;
+}
+
+.drink_area{
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .drink_img{
@@ -153,7 +180,7 @@ body{
 }
 
 .drink_section{
-    width: 12%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -167,8 +194,30 @@ body{
     padding: 9px 0px;
 }
 
+.drink_list{
+        /* width: 15%; */
+        font-size: 21px;
+        font-weight: bold;
+}
+
+.milk{
+    color:#FFDEAD;
+    padding-left: 3%;
+}
+.black{
+    color: #E2DFD2;
+    padding-left: 3%;
+}
+
+.price_list{
+    color: #DFFF00;
+    width: 10%;
+    font-size: 20px;
+    padding: 0 0 5px 5px;
+}
+
 /* CSS for food and drink list starts here */
-#minus{
+.minus{
     height: 25px;
     width: 25px;
     border: 1px black solid;
@@ -177,7 +226,7 @@ body{
     margin-right:10px;
 }
 
-#plus{
+.plus{
     height:25px;
     width:25px;
     border:1px black solid;
@@ -186,16 +235,16 @@ body{
     margin-right:10px;
 }
 
-#minus:hover{
+.minus:hover{
     background-color:red;    
     border:none;
 }
-#plus:hover{
+.plus:hover{
     background-color:green;
     border:none;
 }
 
-#numberPlace {
+.numberPlace {
     margin-left:5px;
     margin-right:5px;
 }
