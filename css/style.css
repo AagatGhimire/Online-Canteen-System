@@ -213,6 +213,7 @@ th, td {
     color: #DFFF00;
     width: 10%;
     font-size: 20px;
+    font-weight: bold;
     padding: 0 0 5px 5px;
 }
 
@@ -224,6 +225,7 @@ th, td {
     border-radius:50%;
     margin-left:10px;
     margin-right:10px;
+    cursor: pointer;
 }
 
 .plus{
@@ -233,6 +235,7 @@ th, td {
     border-radius:50%;
     margin-left:10px;
     margin-right:10px;
+    cursor: pointer;
 }
 
 .minus:hover{
@@ -245,6 +248,13 @@ th, td {
 }
 
 .numberPlace {
+    outline: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E4D00A;
+    background-color: transparent;
+    width: 20px;
     margin-left:5px;
     margin-right:5px;
 }
@@ -302,7 +312,7 @@ th, td {
 }
 
 .menu ul li a:hover{
-    color:#900C3F;
+    color:#DFFF00;
 }
 
 .right_nav{
