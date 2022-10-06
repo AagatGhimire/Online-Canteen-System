@@ -332,7 +332,7 @@ th, td {
 }
 
 .fa-basket-shopping{
-    font-size: 25px;
+    font-size: 18px;
     color: white;
 }
 
@@ -359,8 +359,8 @@ th, td {
 
 /* 
 font awesome stuff
-basket: <i class="fa-thin fa-basket-shopping"></i>
+basket: <i class="fa-solid fa-basket-shopping"></i>
         <i class="fal fa-shopping-basket"></i>
-cart: <i class="fa-thin fa-cart-shopping"></i>
+cart: <i class="fa-solid fa-cart-shopping"></i>
 <script src="https://kit.fontawesome.com/cb82700b96.js" crossorigin="anonymous"></script> 
  */
