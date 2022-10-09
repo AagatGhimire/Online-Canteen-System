@@ -36,3 +36,10 @@ for(var i=0;i<decBtn.length;i++)
     })
 }
 // Code for plus/minus ends here
+
+// Code for cart starts here
+const cartIcon=document.querySelector('.fa-basket-shopping');
+cartIcon.addEventListener('mouseover',()=>{
+    
+})
+// Code for cart ends here 

@@ -322,6 +322,9 @@ th, td {
 }
 
 /* CSS For Navigation Bar Ends Here*/
+
+/* CSS For Footer Starts Here */
+
 .footer{
     width: 100%;
     height: 25px;
@@ -329,11 +332,13 @@ th, td {
     bottom: 0;
     border: 0.1px solid #818589;
     background-color:black;
+    text-align: -webkit-center;
 }
 
 .fa-basket-shopping{
     font-size: 18px;
     color: white;
+    cursor: pointer;
 }
 
 .cart_icon{
@@ -341,9 +346,76 @@ th, td {
     text-align: center;
     padding: 5px 0px;
 }
-/* CSS For Footer Starts Here */
+.cart_header{
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.subtotal{
+    padding: 5%;
+}
+
+.cart_section{
+    overflow-y: auto;
+    max-height: 154px;
+}
+
+.cart_item{
+    display: grid;
+    grid-template-columns: 15fr 3fr 1fr;
+    padding: 5% 2%;
+    border-bottom: 1px solid lightblue;
+}
+
+.item_title, .item_price, .item_quantity{
+    padding: 20px;
+}
+
+.checkout, .view_cart{
+    font-size: large;
+    width: 20%;
+    text-align: center;
+    cursor: pointer;
+    background-color: brown;
+    margin: 10px auto;
+    padding: 10px 15px;
+}
+
+.view_cart{
+    background-color: #fff;
+    border: 2px solid brown;
+    color: brown;
+}
+
+.cart_window{
+    font-size: 26px;
+    position: relative;
+    top: -446px;
+    text-align: center;
+    color: white;
+    border: 1px solid white;
+    width: 30%;
+    padding: 10px 20px;
+}
 
 /* CSS For Footer Ends Here */
+
+.hide{
+    display: none;
+}
+
+.not_empty::after{
+    content: '1';
+    font-size: 12px;
+    width: 12px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    top: -8px;
+    right: 6%;
+    background-color: red;
+    border-radius: 50%;
+}
 
 .underline {
     text-decoration: underline;

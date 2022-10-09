@@ -65,7 +65,7 @@
                 <div class="food_section" id="food_section">
                     <table>
                         <tr>
-                            <div>
+                            <div data-id="1">
                                 <td class="food_list">Samosa</td>
                                 <td class="price_list">Rs.25</td>
                                 <td class="plus_minus_button">
@@ -76,7 +76,7 @@
                             </div>
                         </tr>
                         <tr>
-                            <div>
+                            <div data-id="2">
                                 <td class=" food_list">Momo<span class="non_veg">(chicken)</span></td>
                                 <td class="price_list">Rs.125</td>
                                 <td class="plus_minus_button">
@@ -87,7 +87,7 @@
                             </div>
                         </tr>
                         <tr>
-                            <div>
+                            <div data-id="3">
                                 <td class="food_list">Momo<span class="veg">(veg)</span></td>
                                 <td class="price_list">Rs.85</td>
                                 <td class="plus_minus_button">
@@ -98,7 +98,7 @@
                             </div>
                         </tr>
                         <tr>
-                            <div>
+                            <div data-id="4">
                                 <td class="food_list">Chowmien<span class="non_veg">(chicken)</span></td>
                                 <td class="price_list">Rs.90</td>
                                 <td class="plus_minus_button">
@@ -109,7 +109,7 @@
                             </div>
                         </tr>
                         <tr>
-                            <div>
+                            <div data-id="5">
                                 <td class="food_list">Chowmien<span class="veg">(veg)</span></td>
                                 <td class="price_list">Rs.70</td>
                                 <td class="plus_minus_button">
@@ -138,7 +138,7 @@
                 <div class="drink_section">
                     <table>
                         <tr>
-                            <div>
+                            <div data-id="6">
                                 <td class="drink_list">Coffee<span class="milk">(milk)</span></td>
                                 <td class="price_list">Rs.50</td>
                                 <td class="plus_minus_button">
@@ -149,7 +149,7 @@
                             </div>
                         </tr>
                         <tr>
-                            <div>
+                            <div data-id="7">
                                 <td class="drink_list">Coffee<span class="black">(black)</span></td>
                                 <td class="price_list">Rs.40</td>
                                 <td class="plus_minus_button">
@@ -160,7 +160,7 @@
                             </div>
                         </tr>
                         <tr>
-                            <div>
+                            <div data-id="8">
                                 <td class="drink_list">Tea<span class="milk">(milk)</span></td>
                                 <td class="price_list">Rs.30</td>
                                 <td class="plus_minus_button">
@@ -171,7 +171,7 @@
                             </div>
                         </tr>
                         <tr>
-                            <div>
+                            <div data-id="9">
                                 <td class="drink_list">Tea<span class="black">(black)</span></td>
                                 <td class="price_list">Rs.20</td>
                                 <td class="plus_minus_button">
@@ -182,7 +182,7 @@
                             </div>
                         </tr>
                         <tr>
-                            <div>
+                            <div data-id="10">
                                 <td class="drink_list">Fanta</td>
                                 <td class="price_list">Rs.60</td>
                                 <td class="plus_minus_button">
@@ -205,7 +205,32 @@
         <!-- Footer Section Starts Here -->
         <section class="footer">
             <div class="cart_icon">
-                <i class="fa-solid fa-basket-shopping"></i>
+                <i class="fa-solid fa-basket-shopping not_empty"></i>
+            </div>
+            <div class="cart_window hide">
+                <div class="cart_header text-left">
+                    My Cart</div>
+                <div class="cart_section">
+                    <div class="cart_item">
+                        <div class="cart_details">
+                            <span class="item_title">Title</span>
+                            <span class="item_quantity">Quantity</span>
+                            <span class="item_price">Price</span>
+                        </div>
+                        <div class="remove">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="subtotal text-right">
+                    SubTotal:
+                </div>
+                <div class="checkout">
+                    Checkout
+                </div>
+                <div class="view_cart">
+                    View Cart
+                </div>
             </div>
         </section>
         <!-- Footer Section Ends Here -->
