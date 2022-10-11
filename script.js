@@ -52,8 +52,18 @@ cartIcon.addEventListener('click',()=>{
     }
 })
 
-// cartIcon.addEventListener('mouseleave',()=>{
-//     if(cartWindow.classList.contains('hide'))
-//         cartWindow.classList.remove('hide');
-// })
-// Code for cart ends here 
+// Code for cart ends here
+
+// Code for backend stuff starts here 
+document.addEventListener('DOMContentLoaded', requestItems);
+function requestItems()
+{
+    fetch("http://localhost:8080/items.php", { method: "GET",}).then(
+        (res)=>res.json()).then(
+            data=>{
+                console.log(data);
+            }
+        )
+        .catch(err=>console.log(err));
+}
+// Code for backend stuff ends here
