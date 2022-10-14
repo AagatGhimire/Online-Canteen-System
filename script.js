@@ -52,9 +52,37 @@ cartIcon.addEventListener('click', () => {
 
 // Code for backend stuff starts here
 
-document.addEventListener('DOMContentLoaded', requestItems);
-function requestItems() {
-    fetch("http://localhost:8085/backend/items.php")
+document.addEventListener('DOMContentLoaded', requestFood);
+document.addEventListener('DOMContentLoaded', requestDrinks);
+
+function requestFood() {
+    fetch("http://localhost:8085/backend/foods.php")
+        .then((res) => res.json())
+        .then((data) => {
+                console.log(data);
+                // const food=document.querySelector('.food_section');
+                // if(data.items){
+                //     const ul=document.createElement('ul');
+                //     data.items.array.forEach(item => {
+                //         const li= document.createElement('li');
+                //         li.className=item;
+                //         li.textContent=item;
+                //         li.addEventListener('click', getItem);
+                //         ul.appendChild(li);
+                //     });
+                //     food.append(ul);
+                // }
+            }
+        )
+        .catch(err => console.log(err));
+}
+
+function getItem(){
+    console.log('ok');
+}
+
+function requestDrinks() {
+    fetch("http://localhost:8085/backend/drinks.php")
         .then((res) => res.json())
         .then((data) => {
                 console.log(data);
