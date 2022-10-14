@@ -2,36 +2,33 @@
 
 // Code for plus/minus starts here
 
-var incBtn=document.getElementsByClassName('plus');
-var decBtn=document.getElementsByClassName('minus');
+var incBtn = document.getElementsByClassName('plus');
+var decBtn = document.getElementsByClassName('minus');
 
 //plus
-for(var i=0;i<incBtn.length;i++)
-{
-    var button=incBtn[i];
-    button.addEventListener('click',function(event){
-        var buttonClicked=event.target;
-        var input=buttonClicked.parentElement.children[1];
-        var inputValue=input.value;
-        var newValue=parseInt(inputValue)+1;
+for (var i = 0; i < incBtn.length; i++) {
+    var button = incBtn[i];
+    button.addEventListener('click', function (event) {
+        var buttonClicked = event.target;
+        var input = buttonClicked.parentElement.children[1];
+        var inputValue = input.value;
+        var newValue = parseInt(inputValue) + 1;
         // numberPlace.innerText = newValue;
-        input.value=newValue;
+        input.value = newValue;
     })
 }
 
 //minus
-for(var i=0;i<decBtn.length;i++)
-{
-    var button=decBtn[i];
-    button.addEventListener('click',function(event){
-        var buttonClicked=event.target;
-        var input=buttonClicked.parentElement.children[1];
-        var inputValue=input.value;
-        if(inputValue>0)
-        {
-        var newValue=parseInt(inputValue)-1;
-        // numberPlace.innerText = newValue;
-        input.value=newValue;
+for (var i = 0; i < decBtn.length; i++) {
+    var button = decBtn[i];
+    button.addEventListener('click', function (event) {
+        var buttonClicked = event.target;
+        var input = buttonClicked.parentElement.children[1];
+        var inputValue = input.value;
+        if (inputValue > 0) {
+            var newValue = parseInt(inputValue) - 1;
+            // numberPlace.innerText = newValue;
+            input.value = newValue;
         }
     })
 }
@@ -39,31 +36,31 @@ for(var i=0;i<decBtn.length;i++)
 
 // Code for cart starts here
 
-const cartIcon=document.querySelector('.fa-basket-shopping');
-const cartWindow=document.querySelector('.cart_window');
+const cartIcon = document.querySelector('.fa-basket-shopping');
+const cartWindow = document.querySelector('.cart_window');
 
-cartIcon.addEventListener('click',()=>{
-    if(cartWindow.classList.contains('hide'))
-    {
+cartIcon.addEventListener('click', () => {
+    if (cartWindow.classList.contains('hide')) {
         cartWindow.classList.remove('hide');
     }
-    else{
+    else {
         cartWindow.classList.add('hide');
     }
 })
 
 // Code for cart ends here
 
-// Code for backend stuff starts here 
+// Code for backend stuff starts here
+
 document.addEventListener('DOMContentLoaded', requestItems);
-function requestItems()
-{
-    fetch("http://localhost:8080/items.php", { method: "GET",}).then(
-        (res)=>res.json()).then(
-            data=>{
+function requestItems() {
+    fetch("http://localhost:8085/backend/items.php")
+        .then((res) => res.json())
+        .then((data) => {
                 console.log(data);
             }
         )
-        .catch(err=>console.log(err));
+        .catch(err => console.log(err));
 }
+
 // Code for backend stuff ends here
