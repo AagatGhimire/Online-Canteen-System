@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD']==="GET"){
         while($name= $result->fetch_assoc()){
             array_push($arr,$name); 
         }
-        echo json_encode(['items'=>$arr]);
+        echo json_encode(['drinks'=>$arr]);
     }
     else{
         echo json_encode(['error'=>'an error occured']);

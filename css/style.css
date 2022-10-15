@@ -125,12 +125,20 @@ th, td {
     /* margin: auto; */
 }
 
+.fs{
+    display: flex;
+}
+
 .food_section{
     width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     /* height: 50%; */
+}
+
+.food_wrapper{
+    display: flex;
 }
 
 .food_section ul{
@@ -141,7 +149,8 @@ th, td {
 }
 
 .food_list{
-    width: 15%;
+    padding: 1%;
+    width: 21%;
     font-size: 21px;
     font-weight: bold;
 }
@@ -179,8 +188,12 @@ th, td {
     width: 32%;
 }
 
+.ds{
+    display: flex;
+    height: 45px;
+}
 .drink_section{
-    width: 30%;
+    width: 39%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -195,7 +208,9 @@ th, td {
 }
 
 .drink_list{
-        /* width: 15%; */
+        padding: 1%;
+        /* width: 45px; */
+        width: 47%;
         font-size: 21px;
         font-weight: bold;
 }
