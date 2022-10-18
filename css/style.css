@@ -9,31 +9,7 @@
     font-family: DK Crayon Crumble;
 }  
 
-/* Background Image:- Failed
-1. appying background image on body  
-body{
-    background-image: url("Photo/blackboard.jpg");
-}
 
-2.using div id: bg
-#bg {
-    position: fixed; 
-    top: -50%; 
-    left: -50%; 
-    width: 200%; 
-    height: 200%;
-  }
-  #bg img {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    margin: auto; 
-    min-width: 50%;
-    min-height: 50%;
-  }
-*/
 .background{
     background: rgba(0, 0, 0, 0.7) url('../Photo/blackboard.jpg');
     background-size: cover;
@@ -41,14 +17,6 @@ body{
 
 }
 
-/*Experiment
-.container{
-    border: 1px solid red;
-    width: 80%;
-    margin: 0 auto;
-    padding: 1%;
-}
-*/
 
 .main_title{
     text-align: center;
@@ -344,7 +312,80 @@ th, td {
     width: 70%;
 }
 
+.fa-right-to-bracket,.fa-user,.fa-user-check{
+    color: white;
+
+}
+
+.fa-right-to-bracket:hover{
+    color:red;
+    cursor: pointer;
+}
+.fa-user:hover{
+    color:#DFFF00;
+    cursor: pointer;
+}
+.fa-user-check:hover{
+    color:green;
+    cursor: pointer;
+}
+
+
 /* CSS For Navigation Bar Ends Here*/
+
+/* CSS For Login Panel Starts Here */
+
+.login_Panel{
+    color: white; 
+    font-size: 26px;
+    position: fixed;
+    left: 875px;
+    text-align: center;
+    border: 1px solid white;
+    width: 30%;
+    padding: 10px 20px;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.login_header{
+    font-size: 34px;
+    font-weight: bolder;
+    color: #DAA520;
+}
+
+.login_btn{
+    cursor: pointer;
+    background-color: #FCF55F  ;
+    padding: 1%;
+    margin: 4px 2px;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    border: 1px solid black;
+    width: 30%;
+    align-self: center;
+    border-radius: 15px;
+}
+
+.login_Text{
+    font-size: 16px;
+    padding: 1%;
+    margin: 4px 2px;
+    color: black;
+    font-weight: 800;
+}
+.login_label{
+    width: 70%;
+    text-align: right;
+}
+
+.loginFrm{
+    display: flex;
+    flex-direction: column;
+}
+
+/* CSS For Login Panel Starts Here */
 
 /* CSS For Footer Starts Here */
 

@@ -33,14 +33,43 @@
                     <li>
                         <a href="#">Contact</a>
                     </li>
+                    <li> 
+                        <i class="fa-solid fa-user-check"></i>
+                    </li>
                     <li class="login">
-                        <a href="#">Login/Register</a>
+                        <i class="fa-solid fa-user login"></i>
+                    </li>
+                    <li> 
+                        <i class="fa-solid fa-right-to-bracket"></i>
                     </li>
                 </ul>
             </div>
             <div class="clearfix"></div>
         </section>
         <!--Navigation Bar Ends Here-->
+
+        <!-- Login Panel Starts Here -->
+        <section class="loginPanel">
+        <div class="login_Panel hide">
+            <div class="login_header underline">
+                Login
+            </div>
+            
+            <form class="login_form">
+                <div class="loginFrm">    
+                <label for="userID" class="login_label">ID:
+                    <input type="text" name="userId" placeholder="ID" class="userId login_Text"></label>
+                <label for="userPassword" class="login_label">Password:
+                    <input type="password" name="userPassword" placeholder="Password" class="userPassword login_Text"></label>
+                </div>          
+                <input type="submit" name="submit" class="login_btn submit_btn">
+                <input type="button" name="forgot" class="login_btn forgot_btn" value="Forgot Credentials">
+            
+            </form>
+        
+        </div>
+        </section>
+        <!-- Login Panel Ends Here -->
 
         <!--Credit Starts Here-->
         <section class="credit text-right">

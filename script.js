@@ -17,6 +17,43 @@ cartIcon.addEventListener('click', () => {
 
 // Code for cart ends here
 
+// Code for login starts here
+
+const login=document.querySelector('.login');
+const loginPanel=document.querySelector('.login_Panel');
+const submit=document.querySelector('.submit_btn');
+
+login.addEventListener('click',showLogin);
+submit.addEventListener('click',userLoginRequest);
+
+
+function showLogin(){
+    if (loginPanel.classList.contains('hide')) {
+        loginPanel.classList.remove('hide');
+    }
+    else {
+        loginPanel.classList.add('hide');
+    }
+}
+
+function userLoginRequest(e)
+{
+    e.preventDefault();
+    const form=document.querySelector('.login_form');
+    const formData=new FormData(form);
+    fetch('http://localhost:8085/backend/login.php',{
+        method:"POST",
+        body:formData
+    }).then((res) => res.json())
+    .then((data) => { 
+    console.log(data);
+
+    })
+    .catch(err => console.log(err));
+}
+
+// Code for login ends here
+
 // Code for backend stuff starts here
 
 document.addEventListener('DOMContentLoaded', requestFood);
@@ -63,23 +100,23 @@ function requestFood() {
                     mb.textContent='-';
                     
                     //Function for buttons
-                        pb.addEventListener('click', function (event) {
-                            var buttonClicked = event.target;
-                            var input = buttonClicked.parentElement.children[1];
-                            var inputValue = input.value;
-                            var newValue = parseInt(inputValue) + 1;
-                            input.value = newValue;
-                        })
+                        pb.addEventListener('click', getPB.bind(prod))
+                        //     var buttonClicked = event.target;
+                        //     var input = buttonClicked.parentElement.children[1];
+                        //     var inputValue = input.value;
+                        //     var newValue = parseInt(inputValue) + 1;
+                        //     input.value = newValue;
+                        // })
 
-                        mb.addEventListener('click', function (event) {
-                            var buttonClicked = event.target;
-                            var input = buttonClicked.parentElement.children[1];
-                            var inputValue = input.value;
-                            if (inputValue > 0) {
-                                var newValue = parseInt(inputValue) - 1;
-                                input.value = newValue;
-                            }
-                        })
+                        mb.addEventListener('click', getMB.bind(prod))
+                        //     var buttonClicked = event.target;
+                        //     var input = buttonClicked.parentElement.children[1];
+                        //     var inputValue = input.value;
+                        //     if (inputValue > 0) {
+                        //         var newValue = parseInt(inputValue) - 1;
+                        //         input.value = newValue;
+                        //     }
+                        // })
 
                     pmb.appendChild(mb);
                     pmb.appendChild(nPlace);
@@ -135,23 +172,9 @@ function requestDrinks() {
                     mb.textContent='-';
 
                     //Function for buttons
-                    pb.addEventListener('click', function (event) {
-                        var buttonClicked = event.target;
-                        var input = buttonClicked.parentElement.children[1];
-                        var inputValue = input.value;
-                        var newValue = parseInt(inputValue) + 1;
-                        input.value = newValue;
-                    })
+                    pb.addEventListener('click', getPB.bind(prod))
 
-                    mb.addEventListener('click', function (event) {
-                        var buttonClicked = event.target;
-                        var input = buttonClicked.parentElement.children[1];
-                        var inputValue = input.value;
-                        if (inputValue > 0) {
-                            var newValue = parseInt(inputValue) - 1;
-                            input.value = newValue;
-                        }
-                    })
+                    mb.addEventListener('click', getMB.bind(prod))
 
                     pmb.appendChild(mb);
                     pmb.appendChild(nPlace);
@@ -168,6 +191,25 @@ function requestDrinks() {
         .catch(err => console.log(err));
 }
 
+function getPB(event) {
+    console.log(this)
+    var buttonClicked = event.target;
+    var input = buttonClicked.parentElement.children[1];
+    var inputValue = input.value;
+    var newValue = parseInt(inputValue) + 1;
+    input.value = newValue;
+}
+
+function getMB(event) {
+    console.log(this);
+    var buttonClicked = event.target;
+    var input = buttonClicked.parentElement.children[1];
+    var inputValue = input.value;
+    if (inputValue > 0) {
+        var newValue = parseInt(inputValue) - 1;
+        input.value = newValue;
+    }
+}
 
 // Code for backend stuff ends here
 
