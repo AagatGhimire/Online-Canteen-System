@@ -312,7 +312,7 @@ th, td {
     width: 70%;
 }
 
-.fa-right-to-bracket,.fa-user,.fa-user-check{
+.fa-right-to-bracket,.fa-user,.fa-user-check,.username{
     color: white;
 
 }
@@ -330,6 +330,14 @@ th, td {
     cursor: pointer;
 }
 
+.username{
+    color: #DFFF00;
+    margin-left: 2px;
+}
+
+.greenText{
+    color: green;
+}
 
 /* CSS For Navigation Bar Ends Here*/
 

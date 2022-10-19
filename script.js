@@ -1,6 +1,5 @@
 //Online Canteen System
 
-
 // Code for cart starts here
 
 const cartIcon = document.querySelector('.fa-basket-shopping');
@@ -18,14 +17,30 @@ cartIcon.addEventListener('click', () => {
 // Code for cart ends here
 
 // Code for login starts here
-
+document.addEventListener('DOMContentLoaded',checkLoginStatus);
 const login=document.querySelector('.login');
 const loginPanel=document.querySelector('.login_Panel');
 const submit=document.querySelector('.submit_btn');
+const userIcon=document.querySelector('.fa-user');
+const loggedIcon=document.querySelector('.fa-user-check');
+const logOutIcon=document.querySelector('.fa-right-to-bracket');
 
 login.addEventListener('click',showLogin);
 submit.addEventListener('click',userLoginRequest);
+logOutIcon.addEventListener('click',userLogout);
 
+function showHideIcon(icon,flag){
+    flag ? (icon.style.display='none'):(icon.style.display='block');
+}
+
+function hideIcon(icon){
+    if (icon.classList.contains('hide')) {
+        icon.classList.remove('hide');
+    }
+    else {
+        icon.classList.add('hide');
+    }
+}
 
 function showLogin(){
     if (loginPanel.classList.contains('hide')) {
@@ -39,18 +54,82 @@ function showLogin(){
 function userLoginRequest(e)
 {
     e.preventDefault();
+    // console.log('hi')
     const form=document.querySelector('.login_form');
     const formData=new FormData(form);
     fetch('http://localhost:8085/backend/login.php',{
         method:"POST",
-        body:formData
+        mode:"cors",
+        credentials: "include",
+        body:formData 
     }).then((res) => res.json())
     .then((data) => { 
-    console.log(data);
-
+    // console.log(data);
+    data.user && displayLoggedUser(data.user)
     })
     .catch(err => console.log(err));
 }
+
+function displayLoggedUser(user){
+    showLogin(); 
+    const loggedUser= document.querySelector('.username');
+    loggedUser.textContent=user;
+    showHideIcon(userIcon,true);
+    loggedIcon.classList.remove('greenText');
+
+    // hideIcon(userIcon)
+}
+
+function checkLoginStatus(){
+    // console.log('hi')
+    fetch("http://localhost:8085/backend/login.php?q=check_status",{
+        method:"GET",
+        mode:"cors",
+        credentials: "include",
+})
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data);
+            data.user!='guest' && displayLoggedUser(data.user);
+            data.user=='guest' && displayLoginRegister();
+        })
+        .catch(err => console.log(err));
+}
+
+function userLogout(){
+    fetch("http://localhost:8085/backend/login.php",{
+        method:"GET",
+        mode:"cors",
+        credentials: "include",
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data);
+            data.logout && displayLoginRegister();
+    })
+    .catch(err => console.log(err));
+}
+
+function displayLoginRegister()
+{
+    // showHideIcon(userIcon,false);
+    // showHideIcon(loggedIcon,true);
+    // showHideIcon(logOutIcon,true);
+    const loggedUser= document.querySelector('.username');
+    loggedUser.textContent='';
+}
+
+function displayLoggedUser(user){
+    showLogin(); 
+    const loggedUser= document.querySelector('.username');
+    loggedUser.textContent=user;
+    // showHideIcon(userIcon,true);
+    // showHideIcon(loggedIcon,false);
+    // showHideIcon(logOutIcon,false);
+    // loggedIcon.classList.add('greenText');
+    hideIcon(userIcon)
+}
+
 
 // Code for login ends here
 
@@ -64,7 +143,11 @@ var btn= document.createElement('div');
 // console.log(foodSection)
 
 function requestFood() {
-    fetch("http://localhost:8085/backend/foods.php")
+    fetch("http://localhost:8085/backend/foods.php",{
+        method:"GET",
+        mode:"cors",
+        credentials: "include",
+})
         .then((res) => res.json())
         .then((data) => {
             // console.log(data);
@@ -136,7 +219,11 @@ function requestFood() {
 
 
 function requestDrinks() {
-    fetch("http://localhost:8085/backend/drinks.php")
+    fetch("http://localhost:8085/backend/drinks.php",{
+        method:"GET",
+        mode:"cors",
+        credentials: "include",
+})
         .then((res) => res.json())
         .then((data) => {
             // console.log(data);

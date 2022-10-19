@@ -1,6 +1,5 @@
 <?php
 require 'db.php';
-header('Access-Control-Allow-Origin: *');
 
 if($_SERVER['REQUEST_METHOD']==="GET"){
     $stmt = "select name,price from items where status=1 and type='food';";
