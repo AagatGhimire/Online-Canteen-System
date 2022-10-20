@@ -339,6 +339,9 @@ th, td {
     color: green;
 }
 
+.whiteText{
+    color: white;
+}
 /* CSS For Navigation Bar Ends Here*/
 
 /* CSS For Login Panel Starts Here */
@@ -391,6 +394,31 @@ th, td {
 .loginFrm{
     display: flex;
     flex-direction: column;
+}
+
+.logged_panel{
+    color: white;
+    font-size: 21px;
+    position: fixed;
+    left: 1154px;
+    text-align: center;
+    border: 1px solid white;
+    width: 10%;
+    padding: 10px 20px;
+}
+
+.change_btn{
+    cursor: pointer;
+    background-color: #FCF55F  ;
+    padding: 1%;
+    margin: 4px 2px;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    border: 1px solid black;
+    width: 80%;
+    align-self: center;
+    border-radius: 15px;
 }
 
 /* CSS For Login Panel Starts Here */
@@ -471,6 +499,63 @@ th, td {
 }
 
 /* CSS For Footer Ends Here */
+
+/* CSS For Change Password Starts Here */
+.change_password_section{
+    width: 100%;
+    height: 76vh;
+    font-size: 30px;
+}
+
+.center_content{
+        height: 76vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.main_change_form{
+    color: white;
+}
+
+.forget_form{
+    display: table;
+}
+
+.forgetP{
+    display: table-row;
+}
+
+.forgetL{
+    display: table-cell;
+}
+
+.forget_Text{
+    display: table-cell;
+    font-weight: 1000;
+    font-size: 24px;
+    
+}
+
+.forgetPbtn{
+    justify-content: center ;
+}
+
+.forget_btn{
+    cursor: pointer;
+    background-color: #FCF55F;
+    padding: 1%;
+    margin: 4px 2px;
+    font-size: 26px;
+    font-weight: 600;
+    color: black;
+    border: 1px solid black;
+    width: 225%;
+    align-self: center;
+    border-radius: 80px;
+}
+
+/* CSS For Change Password Ends Here */
 
 .hide{
     display: none;

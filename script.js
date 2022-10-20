@@ -1,25 +1,11 @@
 //Online Canteen System
 
-// Code for cart starts here
-
-const cartIcon = document.querySelector('.fa-basket-shopping');
-const cartWindow = document.querySelector('.cart_window');
-
-cartIcon.addEventListener('click', () => {
-    if (cartWindow.classList.contains('hide')) {
-        cartWindow.classList.remove('hide');
-    }
-    else {
-        cartWindow.classList.add('hide');
-    }
-})
-
-// Code for cart ends here
-
 // Code for login starts here
 document.addEventListener('DOMContentLoaded',checkLoginStatus);
 const login=document.querySelector('.login');
+const logged=document.querySelector('.logged');
 const loginPanel=document.querySelector('.login_Panel');
+const loggedPanel=document.querySelector('.logged_panel');
 const submit=document.querySelector('.submit_btn');
 const userIcon=document.querySelector('.fa-user');
 const loggedIcon=document.querySelector('.fa-user-check');
@@ -28,9 +14,19 @@ const logOutIcon=document.querySelector('.fa-right-to-bracket');
 login.addEventListener('click',showLogin);
 submit.addEventListener('click',userLoginRequest);
 logOutIcon.addEventListener('click',userLogout);
+logged.addEventListener('click',showLogged);
 
 function showHideIcon(icon,flag){
     flag ? (icon.style.display='none'):(icon.style.display='block');
+}
+
+function showLogged(){
+    if (loggedPanel.classList.contains('hide')) {
+        loggedPanel.classList.remove('hide');
+    }
+    else {
+        loggedPanel.classList.add('hide');
+    }
 }
 
 function hideIcon(icon){
@@ -70,16 +66,6 @@ function userLoginRequest(e)
     .catch(err => console.log(err));
 }
 
-function displayLoggedUser(user){
-    showLogin(); 
-    const loggedUser= document.querySelector('.username');
-    loggedUser.textContent=user;
-    showHideIcon(userIcon,true);
-    loggedIcon.classList.remove('greenText');
-
-    // hideIcon(userIcon)
-}
-
 function checkLoginStatus(){
     // console.log('hi')
     fetch("http://localhost:8085/backend/login.php?q=check_status",{
@@ -117,6 +103,8 @@ function displayLoginRegister()
     // showHideIcon(logOutIcon,true);
     const loggedUser= document.querySelector('.username');
     loggedUser.textContent='';
+    loggedIcon.classList.add('whiteText');
+    loggedIcon.classList.remove('greenText');
 }
 
 function displayLoggedUser(user){
@@ -126,12 +114,15 @@ function displayLoggedUser(user){
     // showHideIcon(userIcon,true);
     // showHideIcon(loggedIcon,false);
     // showHideIcon(logOutIcon,false);
-    // loggedIcon.classList.add('greenText');
-    hideIcon(userIcon)
+    loggedIcon.classList.remove('whiteText');
+    loggedIcon.classList.add('greenText');
+    // hideIcon(userIcon)
 }
 
 
 // Code for login ends here
+
+
 
 // Code for backend stuff starts here
 
@@ -184,22 +175,9 @@ function requestFood() {
                     
                     //Function for buttons
                         pb.addEventListener('click', getPB.bind(prod))
-                        //     var buttonClicked = event.target;
-                        //     var input = buttonClicked.parentElement.children[1];
-                        //     var inputValue = input.value;
-                        //     var newValue = parseInt(inputValue) + 1;
-                        //     input.value = newValue;
-                        // })
-
                         mb.addEventListener('click', getMB.bind(prod))
-                        //     var buttonClicked = event.target;
-                        //     var input = buttonClicked.parentElement.children[1];
-                        //     var inputValue = input.value;
-                        //     if (inputValue > 0) {
-                        //         var newValue = parseInt(inputValue) - 1;
-                        //         input.value = newValue;
-                        //     }
-                        // })
+
+                        pb.addEventListener('click', addToCart.bind({id:prod.id,name:prod.name,price:prod.price}))
 
                     pmb.appendChild(mb);
                     pmb.appendChild(nPlace);
@@ -279,16 +257,18 @@ function requestDrinks() {
 }
 
 function getPB(event) {
-    console.log(this)
+    // console.log(this)
     var buttonClicked = event.target;
     var input = buttonClicked.parentElement.children[1];
     var inputValue = input.value;
     var newValue = parseInt(inputValue) + 1;
     input.value = newValue;
+    // const qty=document.querySelector('.numberPlace');
+    // console.log(qty.value)
 }
 
 function getMB(event) {
-    console.log(this);
+    // console.log(this);
     var buttonClicked = event.target;
     var input = buttonClicked.parentElement.children[1];
     var inputValue = input.value;
@@ -300,8 +280,8 @@ function getMB(event) {
 
 // Code for backend stuff ends here
 
-
-
+// Code for cart starts here
+// Code for cart ends here
 
 //Filler:
 
