@@ -238,8 +238,10 @@ function requestDrinks() {
 
                     //Function for buttons
                     pb.addEventListener('click', getPB.bind(prod))
-
                     mb.addEventListener('click', getMB.bind(prod))
+
+                    pb.addEventListener('click', addToCart.bind({id:prod.id,name:prod.name,price:prod.price}))
+
 
                     pmb.appendChild(mb);
                     pmb.appendChild(nPlace);

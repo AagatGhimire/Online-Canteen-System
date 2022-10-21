@@ -23,3 +23,16 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
     }
     exit();
 }
+
+// update cart data
+if($_SERVER['REQUEST_METHOD']==="DELETE"){
+    parse_str(file_get_contents('php://input'),$_DELETE);
+
+    if(isset($_SESSION['logged_user'])){
+        deleteLoggedUserCart($_DELETE);
+    }
+    else{
+        deleteGuestUserCart($_DELETE);
+    }
+    // exit();
+}

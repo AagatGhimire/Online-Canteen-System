@@ -45,9 +45,18 @@ function getProductPrice($id){
 }
 
 function updateTotalCart(){
-    $total=0;
-    foreach($_SESSION["cart"] as $item){
+    $total= 0;
+    foreach($_SESSION['cart'] as $item){
         $total += $item['price'];
+        var_dump($_SESSION['cart']);
     }
     $_SESSION['cart']['total']=$total;
+}
+
+
+function deleteGuestUserCart($_DELETE){
+    $id=$_DELETE['id'];
+    unset($_SESSION['cart'][$id]);
+    updateTotalCart();
+    echo json_encode(['cart'=>$_SESSION['cart']]);   
 }

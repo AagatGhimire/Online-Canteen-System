@@ -8,3 +8,7 @@ function getLoggedUserCart(){
 function addLoggedUserCart(){
 
 }
+
+function deleteLoggedUserCart($_DELETE){
+    
+}
