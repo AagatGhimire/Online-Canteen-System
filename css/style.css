@@ -346,7 +346,25 @@ th, td {
 .whiteText{
     color: white;
 }
+
+
 /* CSS For Navigation Bar Ends Here*/
+
+/* CSS For Credit Starts Here */
+.fa-circle-dollar-to-slot{
+    color: #E49B0F;
+}
+#credit{
+    color: #E49B0F;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.creditP{
+    font-size: 22px;
+    margin-top: 5px;
+}
+/* CSS For Credit Ends Here */
 
 /* CSS For Login Panel Starts Here */
 
@@ -506,6 +524,10 @@ th, td {
     cursor: pointer;
 }
 
+.remove:hover{
+    color: #EE4B2B;
+}
+
 .subtotalP{
     border-bottom: 1px solid yellow;
 }
@@ -536,7 +558,7 @@ th, td {
 .cart_window{
     font-size: 26px;
     position: relative;
-    top: -446px;
+    top: -391px;
     text-align: center;
     color: white;
     border: 1px solid white;

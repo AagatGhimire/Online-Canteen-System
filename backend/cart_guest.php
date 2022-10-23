@@ -45,10 +45,11 @@ function getProductPrice($id){
 }
 
 function updateTotalCart(){
-    $total= 0;
+    $total= 0;  
     foreach($_SESSION['cart'] as $item){
+        // var_dump(gettype($item));
         $total += $item['price'];
-        var_dump($_SESSION['cart']);
+        // var_dump($_SESSION['cart']);
     }
     $_SESSION['cart']['total']=$total;
 }

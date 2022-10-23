@@ -5,7 +5,7 @@ require 'db.php';
 if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET['q'])){
     if(isset($_SESSION['logged_user']))
     {
-        echo json_encode(['user'=>$_SESSION['logged_user']['id']]);
+        echo json_encode(['user'=>$_SESSION['logged_user']['id'],'credit'=>$_SESSION['logged_user']['credit']]);
     }
     else{
         echo json_encode(['user'=>'guest']);
@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     if($user_array=$result->fetch_assoc()){
         $_SESSION['logged_user']['id']=$user_array['user_id'];
         $_SESSION['logged_user']['credit']=$user_array['credit'];
-        echo json_encode(['user'=>$_SESSION['logged_user']['id']]);
+        echo json_encode(['user'=>$_SESSION['logged_user']['id'],'credit'=>$_SESSION['logged_user']['credit']]);
     }
     else{
         echo json_encode(['error'=>'Invalid UserID or Password']);

@@ -60,7 +60,12 @@ cartIcon.addEventListener('click', () => {
         
     }
     const subTotal=document.querySelector('.item_subtotal');
-    subTotal.innerText = localCart.total;
+    if(localCart.length!=0){
+        subTotal.innerText = localCart.total;
+    }
+    else{
+        subTotal.innerText = '0';
+    }
     cartSection.appendChild(catalog);
 })
 
@@ -101,12 +106,15 @@ function addToCart(event){
     console.log(this);
     var buttonClicked = event.target;
     var input = buttonClicked.parentElement.children[1];
+    const loggedUser= document.querySelector('.username');
+    console.log(loggedUser.textContent);
     // console.log(input.value)
     const payload=new URLSearchParams();
     payload.append('id',this.id);
     payload.append('name',this.name);
     payload.append('price',this.price);
     payload.append('quantity',input.value);
+    payload.append('user_id',loggedUser.textContent);
     fetch('http://localhost:8085/backend/cart.php',{
         method:"POST",
         mode:"cors",

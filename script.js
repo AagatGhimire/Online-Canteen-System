@@ -60,8 +60,8 @@ function userLoginRequest(e)
         body:formData 
     }).then((res) => res.json())
     .then((data) => { 
-    // console.log(data);
-    data.user && displayLoggedUser(data.user)
+    console.log(data);
+    data.user && displayLoggedUser(data)
     })
     .catch(err => console.log(err));
 }
@@ -76,7 +76,7 @@ function checkLoginStatus(){
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
-            data.user!='guest' && displayLoggedUser(data.user);
+            data.user!='guest' && displayLoggedUser(data);
             data.user=='guest' && displayLoginRegister();
         })
         .catch(err => console.log(err));
@@ -103,14 +103,19 @@ function displayLoginRegister()
     // showHideIcon(logOutIcon,true);
     const loggedUser= document.querySelector('.username');
     loggedUser.textContent='';
+    const credit= document.querySelector('#credit');
+    credit.textContent='0';
     loggedIcon.classList.add('whiteText');
     loggedIcon.classList.remove('greenText');
 }
 
-function displayLoggedUser(user){
-    showLogin(); 
+function displayLoggedUser(data){
+    showLogin();     
     const loggedUser= document.querySelector('.username');
-    loggedUser.textContent=user;
+    const credit= document.querySelector('#credit');
+    // console.log(credit)
+    loggedUser.textContent=data.user;
+    credit.innerHTML=data.credit;
     // showHideIcon(userIcon,true);
     // showHideIcon(loggedIcon,false);
     // showHideIcon(logOutIcon,false);
