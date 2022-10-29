@@ -24,6 +24,7 @@ cartIcon.addEventListener('click', () => {
         const catalog=document.createElement('div');
         catalog.className='cart_catalog';
         const cartSection=document.querySelector('#cart_items');
+        // const checkoutSection=document.querySelector('#checkout_section');
 
     for(const [id,product]of Object.entries(localCart.cart)){
         // if (cartWindow.classList.contains('hide')) {
@@ -36,6 +37,7 @@ cartIcon.addEventListener('click', () => {
 
         const cs=document.createElement('div');
         cs.className='cs';
+        cs.setAttribute('item_name',name);
         const nameDiv=document.createElement('span');
         nameDiv.className='item_title';
         const priceDiv=document.createElement('span');
@@ -62,11 +64,13 @@ cartIcon.addEventListener('click', () => {
     const subTotal=document.querySelector('.item_subtotal');
     if(localCart.length!=0){
         subTotal.innerText = localCart.total;
+        checkoutBtn.addEventListener('click',proceedToCheckout);
     }
     else{
         subTotal.innerText = '0';
     }
     cartSection.appendChild(catalog);
+    // checkoutSection.appendChild(catalog);
 })
 
 
@@ -79,6 +83,7 @@ function updateCart(){
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
+            addCheckoutItems(data);
             responseUpdateCart(data);
     })
     .catch(err => console.log(err));    
@@ -145,5 +150,10 @@ function deleteProuct(){
 
 function responseUpdateCartItem(){
     
+}
+
+function proceedToCheckout(){
+    // console.log('ok')
+    window.open("checkout.html");
 }
 // Code for cart ends here

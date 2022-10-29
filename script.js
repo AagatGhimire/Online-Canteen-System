@@ -10,11 +10,13 @@ const submit=document.querySelector('.submit_btn');
 const userIcon=document.querySelector('.fa-user');
 const loggedIcon=document.querySelector('.fa-user-check');
 const logOutIcon=document.querySelector('.fa-right-to-bracket');
+const checkoutBtn=document.querySelector('.checkout');
 
 login.addEventListener('click',showLogin);
 submit.addEventListener('click',userLoginRequest);
 logOutIcon.addEventListener('click',userLogout);
 logged.addEventListener('click',showLogged);
+
 
 function showHideIcon(icon,flag){
     flag ? (icon.style.display='none'):(icon.style.display='block');
@@ -126,6 +128,55 @@ function displayLoggedUser(data){
 
 
 // Code for login ends here
+
+// Code for Checkout starts here
+
+
+
+
+
+
+
+
+// const checkoutSection=document.querySelector('#checkout_section');
+// for(const [id,product]of Object.entries(localCart.cart)){
+//     const {name,price,quantity}=product;
+//         console.log('ok')
+//         const cs=document.createElement('div');
+//         cs.className='cs';
+//         const nameDiv=document.createElement('span');
+//         nameDiv.className='item_title';
+//         const priceDiv=document.createElement('span');
+//         priceDiv.className='item_price';
+//         const qtyDiv=document.createElement('span');
+//         qtyDiv.className='item_quantity';
+//         const removeBtn=document.createElement('span');
+//         removeBtn.className='remove';
+
+//         nameDiv.textContent=name;
+//         priceDiv.textContent=price;
+//         qtyDiv.textContent=quantity;
+//         removeBtn.textContent='X';
+
+//         removeBtn.addEventListener('click',deleteProuct.bind(id));
+
+//         cs.appendChild(nameDiv);
+//         cs.appendChild(qtyDiv);
+//         cs.appendChild(priceDiv);
+//         cs.appendChild(removeBtn);
+//         catalog.appendChild(cs);
+        
+//     }
+//     const subTotal=document.querySelector('.item_subtotal');
+//     if(localCart.length!=0){
+//         subTotal.innerText = localCart.total;
+//         checkoutBtn.addEventListener('click',proceedToCheckout);
+//     }
+//     else{
+//         subTotal.innerText = '0';
+//     }
+//     cartSection.appendChild(catalog);
+// Code for Checkout ends here
 
 
 
