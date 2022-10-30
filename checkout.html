@@ -48,6 +48,31 @@
             <div class="clearfix"></div>
         </section>
         <!--Navigation Bar Ends Here-->
+        
+        <!-- Login Panel Starts Here -->
+        <section class="loginPanel">
+            <div class="login_Panel hide">
+                <div class="login_header underline">
+                    Login
+                </div>
+                
+                <form class="login_form">
+                    <div class="loginFrm">    
+                    <label for="user_id" class="login_label">ID:
+                        <input type="text" name="user_id" placeholder="ID" class="user_id login_Text"></label>
+                    <label for="password" class="login_label">Password:
+                        <input type="password" name="password" placeholder="Password" class="password login_Text"></label>
+                    </div>          
+                    <input type="submit" name="submit" class="login_btn submit_btn">
+                    <input type="button" name="forgot" class="login_btn forgot_btn" value="Forgot Credentials">
+                </form>
+            </div>
+            <div class="logged_panel hide">
+                <span class="username"></span>
+                <input type="button" name="pswChange" class="change_btn" value="Change Password" onclick="window.location.href='login.html'">
+            </div>
+            </section>
+            <!-- Login Panel Ends Here -->
 
         <!--Credit Starts Here-->
         <section class="credit text-right">
@@ -67,17 +92,42 @@
         <section class="main_section checkout_section">
             
             <div id="checkout_section">
-                <!-- <div class="checkout_heading"> -->
-                    <span>Name</span>
-                    <span>Quantity</span>
-                    <span>Price</span>
-                <!-- </div> -->
+                <!-- <div class="checkout_heading">
+                    <div class="checkout_heading_name">Name</div>
+                    <div class="checkout_heading_quantity">Quantity</div>
+                    <div class="checkout_heading_price">Price</div>
+                </div> -->
+            </div>
+            <div class="location">
+                <form class="location_form">
+                <label for="Location" class="location_label underline">Select Room:</label>
+                <input list="locations" name="locations" class="locations">
+                <datalist id="locations">
+                    <option value="601">
+                    <option value="602">
+                    <option value="701">
+                    <option value="702">
+                    <option value="703">
+                    <option value="801">
+                    <option value="802">
+                    <option value="803">
+                    <option value="901">
+                    <option value="902">
+                  </datalist>
+              </form>
+              </div>
+            <div class="subtotal text-right">
+                <p class="subtotalP"><span class='checkout_subttl'>SubTotal:</span><span class="checkout_subtotal"></span></p>
+            </div>
+            <div class="checkout_pay">
+                Checkout
+                <!-- <input type="button" name="checkout" class="checkout_btn" value="Checkout" onclick="window.location.href='login.html'"> -->
             </div>
         </section>
         <!--Main Section Ends Here-->
 
         <!-- Footer Section Starts Here -->
-        <section class="footer">
+        <!-- <section class="footer">
             <div class="cart_icon">
                 <i class="fa-solid fa-basket-shopping not_empty"></i>
             </div>
@@ -103,7 +153,7 @@
                     Checkout
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Footer Section Ends Here -->
     </section>
     

@@ -1,6 +1,23 @@
-// document.addEventListener('DOMContentLoaded',addCheckoutItems);
+document.addEventListener('DOMContentLoaded',updateCheckout);
 // const checkoutSection=document.querySelector('#checkout_section');
 // checkoutSection.addEventListener('onload',addCheckoutItems)
+
+
+function updateCheckout(){
+    fetch("http://localhost:8085/backend/cart.php",{
+        method:"GET",
+        mode:"cors",
+        credentials: "include",
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data);
+            addCheckoutItems(data);
+            // responseUpdateCart(data);
+    })
+    .catch(err => console.log(err));    
+}
+
 function addCheckoutItems(data){
     console.log(data);
     const {total,...cart}=data.cart;
@@ -11,16 +28,7 @@ function addCheckoutItems(data){
     const checkoutSection=document.querySelector('#checkout_section');
     const checkout_catalog=document.createElement('div');
     checkout_catalog.className='checkout_catalog';
-
-    const checkout_name=document.createElement('span');
-    // checkout_name.className='checkout_name';
-    // checkout_name.textContent="Name";
-    // const checkout_qty=document.createElement('span');
-    // checkout_qty.className='checkout_qty';
-    // checkout_name.textContent="Quantity"
-
-    // checkout_catalog.appendChild(checkout_name);
-    // checkout_catalog.appendChild(checkout_qty);    
+    
     for(const [id,product]of Object.entries(localCart.cart)){
         const {name,price,quantity}=product;
         // console.log(price);
@@ -29,7 +37,6 @@ function addCheckoutItems(data){
 
         const checkoutsect=document.createElement('div');
         checkoutsect.className='checkoutsect';
-        // checkoutsect.setAttribute('item_name',name);
         const checkout_item_title=document.createElement('span');
         checkout_item_title.className='checkout_item_title';
         const checkout_item_price=document.createElement('span');
@@ -39,29 +46,37 @@ function addCheckoutItems(data){
         const checkout_removeBtn=document.createElement('span');
         checkout_removeBtn.className='checkout_removeBtn';
 
-        checkout_item_title.textContent=name;
-        checkout_item_price.textContent=price;
-        checkout_item_qty.textContent=quantity;
+
+        checkout_item_title.textContent=`Item: ${name}`;
+        checkout_item_price.textContent=`Price: ${price}`;
+        checkout_item_qty.textContent=`Quantity: ${quantity}`;
+
+
         checkout_removeBtn.textContent='X';
 
         checkout_removeBtn.addEventListener('click',deleteProuct.bind(id));
 
         checkoutsect.appendChild(checkout_item_title);
-        checkoutsect.appendChild(checkout_item_price);
         checkoutsect.appendChild(checkout_item_qty);
+        checkoutsect.appendChild(checkout_item_price);
         checkoutsect.appendChild(checkout_removeBtn);
         checkout_catalog.appendChild(checkoutsect);
         
     }
-    const subTotal=document.querySelector('.item_subtotal');
-    
+    const subTotal=document.querySelector('.checkout_subtotal');
+    if(localCart.length!=0){
+        subTotal.innerText = localCart.total;
+    }
+    else{
+        subTotal.innerText = '0';
+    }
     checkoutSection.appendChild(checkout_catalog);
     }
-    // let itemsToBuy=[]
-    // const itemRows=document.querySelectorAll('.catalog');
-    // // console.log(itemRows);
-    // itemRows.forEach(row=>{
-    //     let obj={}
-    //     item_name=row.getAttribute('item_name');
-    //     console.log(item_name);
-    // })
+    
+    const pay_btn=document.querySelector('.checkout_pay');
+    pay_btn.addEventListener('click',proceedToPay);
+    const creditID=document.querySelector('#credit')
+    console.log(creditID)
+    function proceedToPay(){
+        console.log('pay');
+    }

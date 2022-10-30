@@ -629,44 +629,108 @@ th, td {
 .checkout_section{
     color: white;
     width: 100%;
-    height: 75vh;
-    font-size: 30px;
+    height: 77vh;
+    font-size: 40px;
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#checkout_section{
+    display: table;
+    font-weight: bolder;
 }
 
 .checkout_heading{
-    display: table;
-    font-weight: bolder;
+    display: flex;
+}
+
+.checkout_heading_name,.checkout_heading_price,.checkout_heading_quantity{
+    display: inline-flex;
+    margin-left: 37px;
+    padding: 5px;
+}
+
+.checkout_heading_name{
+    color: #A52A2A;
+}
+
+.checkout_heading_price{
+    color:#CC5500;
+}
+
+.checkout_heading_quantity{
+    color:#954535;
 }
 
 .checkoutsect{
     display: table-row;
 }
 
-.item_title, .item_price, .item_quantity{
+.checkout_item_title, .checkout_item_price, .checkout_item_qty{
     padding: 20px;
     display: table-cell;
     /* border-bottom: 1px solid lightcoral; */
 }
 
-.item_title{
+.checkout_item_title{
+    color: #CCCCFF;
     font-weight: bold;
     text-align: left;
 }
 
-.item_price{
+.checkout_item_price{
     color: #32CD32;
     font-weight: 800;
 }
 
-.item_quantity{
+.checkout_item_qty{
     color: yellow;
 
 }
 
-.remove{
+.checkout_subttl{
+    color: #FFDEAD;
+}
+
+.checkout_subtotal{
+    color: #E49B0F;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.checkout_removeBtn{
     color: red;
     font-weight: bolder;
     cursor: pointer;
+    margin-left: 58px
+}
+
+.locations{
+    color: #00A36C;
+    width: 14%;
+    font-size: 22px;
+    background-color: #EADDCa;
+}
+
+.location_label{
+    color: 	#AA336A;
+    font-weight: bold;
+}
+
+.checkout_pay{
+    font-size: 24px;
+    width: 20%;
+    text-align: center;
+    cursor: pointer;
+    background-color: #D27D2D;
+    margin: -40px auto;
+    border-radius: 50px;
+    padding: 10px 15px;
+    color: #1B1212;
+    font-weight: bold;
 }
 
 /* CSS For Checkout Ends Here */

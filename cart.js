@@ -64,6 +64,7 @@ cartIcon.addEventListener('click', () => {
     const subTotal=document.querySelector('.item_subtotal');
     if(localCart.length!=0){
         subTotal.innerText = localCart.total;
+        
         checkoutBtn.addEventListener('click',proceedToCheckout);
     }
     else{
@@ -83,7 +84,7 @@ function updateCart(){
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
-            addCheckoutItems(data);
+            // addCheckoutItems(data);
             responseUpdateCart(data);
     })
     .catch(err => console.log(err));    
@@ -154,6 +155,14 @@ function responseUpdateCartItem(){
 
 function proceedToCheckout(){
     // console.log('ok')
+    const loggedUser= document.querySelector('.username');
+    if(loggedUser.textContent!=''){
     window.open("checkout.html");
+    }
+    else{
+        alert('Please login');
+        showLogin();
+    }
 }
 // Code for cart ends here
+
