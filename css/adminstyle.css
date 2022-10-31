@@ -1,0 +1,74 @@
+
+
+/* CSS For Admin Login Page Starts Here */
+.admin_bg{
+    background: rgba(0, 0, 0, 0.7) url('../Photo/blackboard2.jpg');
+    background-size: cover;
+    background-blend-mode: darken;
+
+}
+
+#main_login_section{
+    color: white;
+    width: 100%;
+    height: 100vh;
+    font-size: 40px;
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.admin_login_form_div{
+    border: 3px solid #FFFF8F;
+    display: table;
+    padding: 65px;
+}
+
+.admin_id_p,.admin_password_p,.admin_submit_p{
+    display: table-row;
+}
+
+.idL,.passL{
+    display: table-cell;
+    padding: 10px;
+    text-align: right;
+    color: #8B8000;
+    font-weight: bold;
+}
+
+.admin_input_text{
+    display: table-cell;
+    font-weight: 1000;
+    font-size: 24px;
+    padding: 5px;   
+}
+
+.submitPbtn{
+    justify-content: center ;
+}
+
+.admin_submit_btn{
+    cursor: pointer;
+    background-color: #E49B0F;
+    padding: 1%;
+    margin: 4px 2px;
+    font-size: 26px;
+    font-weight: 600;
+    color: black;
+    border: 1px solid black;
+    width: 205%;
+    align-self: center;
+    border-radius: 80px;
+}
+
+.admin_submit_btn:hover{
+    color: #FFFF8F;
+}
+
+.admin_id_p{
+    padding: 5px;
+}
+
+/* CSS For Admin Login Page Ends Here */
