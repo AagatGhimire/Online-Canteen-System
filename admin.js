@@ -1,25 +1,16 @@
 
-// Code for Login Page Starts Here
-const adminSubmitBtn=document.querySelector('.admin_submit_btn');
+const admin_logOutSection=document.querySelector('.logout_section');
+const admin_welcome=document.querySelector('.welcome_header');
+const admin_logOutIcon=document.querySelector('.fa-power-off');
 
-adminSubmitBtn.addEventListener('click',loginAdmin);
+admin_welcome.addEventListener('click',showLogout);
 
-function loginAdmin(e){
-    e.preventDefault(); 
-    // console.log('login');
-    const form=document.querySelector('.admin_login_form');
-    const formData=new FormData(form);
-    fetch('http://localhost:8085/backend/adminlogin.php',{
-        method:"POST",
-        mode:"cors",
-        credentials: "include",
-        body:formData 
-    }).then((res) => res.json())
-    .then((data) => { 
-    console.log(data);
-    // data.user && displayLoggedUser(data)
-    })
-    .catch(err => console.log(err));
+function showLogout(){
+    // console.log(admin_logOutSection);
+        if (admin_logOutSection.classList.contains('hide')) {
+            admin_logOutSection.classList.remove('hide');
+        }
+        else {
+            admin_logOutSection.classList.add('hide');
+        }
 }
-
-// Code for Login Page Ends Here

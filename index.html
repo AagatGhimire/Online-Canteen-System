@@ -36,11 +36,11 @@
                     <li class="login">
                         <i class="fa-solid fa-user login"></i>
                     </li>
-                    <li class="logged"> 
+                    <li class="logged">
                         <i class="fa-solid fa-user-check"></i>
                         <span class="username"></span>
                     </li>
-                    <li> 
+                    <li>
                         <i class="fa-solid fa-right-to-bracket"></i>
                     </li>
                 </ul>
@@ -51,32 +51,35 @@
 
         <!-- Login Panel Starts Here -->
         <section class="loginPanel">
-        <div class="login_Panel hide">
-            <div class="login_header underline">
-                Login
+            <div class="login_Panel hide">
+                <div class="login_header underline">
+                    Login
+                </div>
+
+                <form class="login_form">
+                    <div class="loginFrm">
+                        <label for="user_id" class="login_label">ID:
+                            <input type="text" name="user_id" placeholder="ID" class="user_id login_Text"></label>
+                        <label for="password" class="login_label">Password:
+                            <input type="password" name="password" placeholder="Password"
+                                class="password login_Text"></label>
+                    </div>
+                    <input type="submit" name="submit" class="login_btn submit_btn">
+                    <input type="button" name="forgot" class="login_btn forgot_btn" value="Forgot Credentials">
+                </form>
             </div>
-            
-            <form class="login_form">
-                <div class="loginFrm">    
-                <label for="user_id" class="login_label">ID:
-                    <input type="text" name="user_id" placeholder="ID" class="user_id login_Text"></label>
-                <label for="password" class="login_label">Password:
-                    <input type="password" name="password" placeholder="Password" class="password login_Text"></label>
-                </div>          
-                <input type="submit" name="submit" class="login_btn submit_btn">
-                <input type="button" name="forgot" class="login_btn forgot_btn" value="Forgot Credentials">
-            </form>
-        </div>
-        <div class="logged_panel hide">
-            <span class="username"></span>
-            <input type="button" name="pswChange" class="change_btn" value="Change Password" onclick="window.location.href='login.html'">
-        </div>
+            <div class="logged_panel hide">
+                <span class="username"></span>
+                <input type="button" name="pswChange" class="change_btn" value="Change Password"
+                    onclick="window.location.href='login.html'">
+            </div>
         </section>
         <!-- Login Panel Ends Here -->
 
         <!--Credit Starts Here-->
         <section class="credit text-right">
-            <p class="creditP"><i class="fa-solid fa-circle-dollar-to-slot"></i></span><span id="credit">Credit</span></p>
+            <p class="creditP"><i class="fa-solid fa-circle-dollar-to-slot"></i></span><span id="credit">Credit</span>
+            </p>
         </section>
         <!--Credit Ends Here-->
 
@@ -95,12 +98,12 @@
             </div>
             <div class="food_area">
                 <div class="food_section" id="food_section">
-                            <!-- <div class="plus_minus_button">
+                    <!-- <div class="plus_minus_button">
                                 <button class="minus" name="minus" id="minus">-</button>
                                 <input type="text" class="numberPlace" value="0">
                                 <button class="plus" name="plus" id="fplus1">+</button>
                             </div> -->
-                    </div>
+                </div>
                 <div class="food_img">
                     <img src="Photo/food.png" alt="Food" class="image_res">
                 </div>
@@ -108,7 +111,7 @@
             <div class="clearfix"></div>
         </section>
         <!--Food Ends Here-->
-        
+
         <!--Drink Starts Here-->
         <section class="drink">
             <div class="small_heading text-right">
@@ -152,7 +155,7 @@
         </section>
         <!-- Footer Section Ends Here -->
     </section>
-    
+
     <!-- Code For Importing JavaScript File -->
     <script src="script.js" defer></script>
     <script src="change.js"></script>

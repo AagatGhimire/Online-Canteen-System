@@ -1,12 +1,17 @@
-
-
-/* CSS For Admin Login Page Starts Here */
 .admin_bg{
     background: rgba(0, 0, 0, 0.7) url('../Photo/blackboard2.jpg');
     background-size: cover;
     background-blend-mode: darken;
-
 }
+
+.full_page{
+    color: white;
+    width: 100%;
+    height: 100vh;
+}
+
+/* CSS For Admin Login Page Starts Here */
+
 
 #main_login_section{
     color: white;
@@ -72,3 +77,103 @@
 }
 
 /* CSS For Admin Login Page Ends Here */
+
+
+/* CSS For Admin Nav Bar Starts Here */
+.admin_nav{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    border: 0.1px solid #818589;
+    background-color:black;
+    align-items: center;
+    color: white;
+    /* overflow: hidden; */
+    position: sticky;
+    top: 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.admin_nav_menu{
+    width: 100%;
+    display: flex;
+    align-content: space-around;
+    justify-content: flex-end
+}
+
+.nav_logo{
+    width: 23%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-right: 1px solid #bbb; */
+}
+.nav_logo img{
+    width: 40px;
+    /* border: 1px solid white; */
+    border-radius: 50px;
+}
+
+.logo_title{
+    color: beige;
+    font-weight: bolder;
+    padding: 0  5px;
+}
+
+.admin_nav_menu ul{
+    list-style-type: none;
+}
+
+.admin_nav_menu ul li{
+    display: inline;
+    padding: 26px 30px;
+    /* border-right: 2px solid #bbb; */
+}
+
+.admin_nav_menu ul li a{
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+.admin_nav_menu ul li a:hover{
+    color:#DFFF00;
+}
+
+.welcome_header{
+    font-weight: bold;
+    color: #FFDEAD;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.temp_nav{
+    color:#FFDEAD;
+}
+/* CSS For Admin Nav Bar Ends Here */
+
+/* CSS For Logout Starts Here */
+.logout_div{
+    cursor: pointer;
+}
+
+.logout_text{
+    color: #FFDEAD;
+    font-size: 20px;
+}
+
+.logout_section{
+    position: fixed;
+    left: 1299px;
+    text-align: center;
+    border: 1px solid white;
+    width: 9%;
+    padding: 9px 20px;
+}
+
+.fa-power-off{
+    color: wheat;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* CSS For Logout Ends Here */
