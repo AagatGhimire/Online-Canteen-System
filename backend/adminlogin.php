@@ -20,3 +20,27 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $prep_stmt->close();
     exit();
 }
+
+if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET['q'])){
+    if(isset($_SESSION['logged_user']))
+    {
+        echo json_encode(['user'=>$_SESSION['logged_user']['id']]);
+    }
+    else{
+        echo json_encode(['user'=>'guest']);
+    }
+    exit();
+}
+
+if($_SERVER['REQUEST_METHOD']=="GET"){
+    if(isset($_SESSION['logged_user'])){
+        session_unset();
+        session_destroy();
+        echo json_encode(['logout'=>true]);
+    }
+    else{
+        echo json_encode(['logout'=>false]);
+    }
+    exit();
+}
+

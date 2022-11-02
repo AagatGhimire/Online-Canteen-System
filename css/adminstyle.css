@@ -161,6 +161,16 @@
     font-size: 20px;
 }
 
+.admin_header{
+    font-size: 20px;
+    color: #CD7F32;
+    font-weight: bold;
+    cursor: pointer;
+    /* background-color: #FFFFF0; */
+    border-radius: 1rem;
+    padding: 4px;
+}
+
 .logout_section{
     position: fixed;
     left: 1299px;

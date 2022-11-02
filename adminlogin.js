@@ -1,5 +1,6 @@
 
 // Code for Login Page Starts Here
+document.addEventListener('DOMContentLoaded',checkLoginStatus);
 const adminSubmitBtn=document.querySelector('.admin_submit_btn');
 
 adminSubmitBtn.addEventListener('click',loginAdmin);
