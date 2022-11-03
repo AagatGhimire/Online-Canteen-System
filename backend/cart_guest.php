@@ -61,3 +61,7 @@ function deleteGuestUserCart($_DELETE){
     updateTotalCart();
     echo json_encode(['cart'=>$_SESSION['cart']]);   
 }
+
+function updateGuestUserCart($_PATCH){
+    
+}

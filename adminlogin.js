@@ -18,7 +18,7 @@ function loginAdmin(e){
     }).then((res) => res.json())
     .then((data) => { 
     console.log(data);
-    data.user && redirectLogin(data);
+    data.admin && redirectLogin(data);
     })
     .catch(err => console.log(err));
 }

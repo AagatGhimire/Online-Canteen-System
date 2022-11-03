@@ -63,7 +63,8 @@ function userLoginRequest(e)
     }).then((res) => res.json())
     .then((data) => { 
     console.log(data);
-    data.user && displayLoggedUser(data)
+    data.user && displayLoggedUser(data);
+    data.user && updateCart();
     })
     .catch(err => console.log(err));
 }

@@ -13,6 +13,8 @@ if($_SERVER['REQUEST_METHOD']==="GET"){
     exit();
 }
 
+
+
 // add new product to cart
 if($_SERVER['REQUEST_METHOD']==="POST"){
     if(isset($_SESSION['logged_user'])){
@@ -33,6 +35,18 @@ if($_SERVER['REQUEST_METHOD']==="DELETE"){
     }
     else{
         deleteGuestUserCart($_DELETE);
+    }
+    // exit();
+}
+
+if($_SERVER['REQUEST_METHOD']==="PATCH"){
+    parse_str(file_get_contents('php://input'),$_PATCH);
+
+    if(isset($_SESSION['logged_user'])){
+        updateLoggedUserCart($_PATCH);
+    }
+    else{
+        updateGuestUserCart($_PATCH);
     }
     // exit();
 }

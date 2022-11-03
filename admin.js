@@ -100,7 +100,8 @@ function setActiveHeader(nav_header){
 }
 
 nav_user.addEventListener('click',navUserClick);
-nav_product.addEventListener('click',navProductClick)
+nav_product.addEventListener('click',navProductClick);
+nav_order.addEventListener('click',navOrderClick);
 
 function navUserClick(){
     // console.log(this);
@@ -113,7 +114,11 @@ function navUserClick(){
 }
 
 function navProductClick(){
-    
+    window.open("adminProduct.html", "_self");            
+}
+
+function navOrderClick(){
+    window.open("adminindex.html", "_self");            
 }
 
 // Code for headers ends here

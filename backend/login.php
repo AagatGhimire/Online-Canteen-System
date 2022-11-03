@@ -5,7 +5,7 @@ require 'db.php';
 if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET['q'])){
     if(isset($_SESSION['logged_user']))
     {
-        echo json_encode(['user'=>$_SESSION['logged_user']['id'],'credit'=>$_SESSION['logged_user']['credit']]);
+        echo json_encode(['user'=>$_SESSION['logged_user']['id'], 'credit'=>$_SESSION['logged_user']['credit']]);
     }
     else{
         echo json_encode(['user'=>'guest']);

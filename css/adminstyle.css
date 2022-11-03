@@ -10,6 +10,11 @@
     height: 100vh;
 }
 
+.full_page_admin{
+    color: white;
+    width: 100%;
+}
+
 /* CSS For Admin Login Page Starts Here */
 
 
@@ -187,3 +192,106 @@
 }
 
 /* CSS For Logout Ends Here */
+
+/* CSS For Admin Products Starts Here*/
+.main_product_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.product_catalog{
+    display: table;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin_prod_heading{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.name_heading{
+    margin: 5px;
+    margin-left: 150px;
+    color: #D70040;
+}
+
+.price_heading{
+    margin-left: 64px;
+    color: #E97451;
+}
+
+.type_heading{
+    margin: 5px;
+    margin-left: 54px;
+    color: #D22B2B;
+}
+
+.stock_heading{
+    margin: 5px;
+    margin-left: 48px;
+    color: #CC5500;
+    
+}
+
+.status_heading{
+    margin: 5px;
+    margin-left: 42px;
+    color: #F88379;
+}
+
+.ps{
+    display:flex;
+    font-size: 24px;
+    padding: 10px;
+    justify-content: flex-end;
+}
+
+.prod_food_list,.prod_price_list,.prod_status_list,.prod_type_list,.prod_stock_list{
+    display: table-cell;
+    padding: 5px;
+    margin-left: 60px;
+}
+
+.prod_food_list{
+    color:#0047AB;
+    font-weight: bold;
+}
+
+.prod_price_list{
+    color: #00A36C;
+    font-weight: bold;
+}
+
+.prod_type_list{
+    color: #088F8F;
+}
+
+.prod_stock_list{
+    color: #CCCCFF;
+    font-weight: bold;
+}
+
+.low_stock{
+    color:#FF3131;
+    font-weight: bolder;
+}
+
+.prod_status_list{
+    color: red;
+}
+
+.active{
+    color: green;
+}
+
+.inactive{
+    color: red;
+}
+/* CSS For Admin Products Ends Here*/

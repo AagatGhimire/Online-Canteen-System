@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $result=$prep_stmt->get_result();
     if($user_array=$result->fetch_assoc()){
         $_SESSION['logged_user']['id']=$user_array['id'];
-        echo json_encode(['user'=>$_SESSION['logged_user']['id'],]);
+        echo json_encode(['admin'=>$_SESSION['logged_user']['id'],]);
     }
     else{
         echo json_encode(['error'=>'Invalid UserID or Password']);
@@ -24,10 +24,10 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET['q'])){
     if(isset($_SESSION['logged_user']))
     {
-        echo json_encode(['user'=>$_SESSION['logged_user']['id']]);
+        echo json_encode(['admin'=>$_SESSION['logged_user']['id']]);
     }
     else{
-        echo json_encode(['user'=>'guest']);
+        echo json_encode(['admin'=>'guest']);
     }
     exit();
 }

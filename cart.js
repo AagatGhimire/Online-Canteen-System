@@ -13,7 +13,8 @@ const localCart={
     total:0,
 };
 
-cartIcon.addEventListener('click', () => {
+cartIcon.addEventListener('click', showCart)
+function showCart(){
     if (cartWindow.classList.contains('hide')) {
         cartWindow.classList.remove('hide');
     }
@@ -72,7 +73,7 @@ cartIcon.addEventListener('click', () => {
     }
     cartSection.appendChild(catalog);
     // checkoutSection.appendChild(catalog);
-})
+}
 
 
 function updateCart(){
@@ -129,6 +130,7 @@ function addToCart(event){
     }).then((res) => res.json())
     .then((data) => { 
     // console.log(data);
+    updateCart();
     })
     .catch(err => console.log(err));
 }
@@ -144,7 +146,24 @@ function deleteProuct(){
     }).then((res) => res.json())
     .then((data) => { 
     // console.log(data );
-    responseUpdateCartItem();
+    updateCart();
+    responseUpdateCartItem(data);
+    })
+    .catch(err => console.log(err));
+}
+
+function updateProduct(e){
+    const payload=new URLSearchParams();
+    payload.append("quantity",e.target.value)
+    fetch('http://localhost:8085/backend/cart.php',{
+        method:"PATCH",
+        mode:"cors",
+        credentials: "include",
+        body:payload 
+    }).then((res) => res.json())
+    .then((data) => { 
+    // console.log(data );
+    responseUpdateCartItem(data);
     })
     .catch(err => console.log(err));
 }
