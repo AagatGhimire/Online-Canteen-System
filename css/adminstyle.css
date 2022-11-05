@@ -15,6 +15,11 @@
     width: 100%;
 }
 
+.full_page_index{
+    color: white;
+    width: 100%;
+    height: auto;
+}
 /* CSS For Admin Login Page Starts Here */
 
 
@@ -295,3 +300,186 @@
     color: red;
 }
 /* CSS For Admin Products Ends Here*/
+
+/* CSS For Admin Order Starts Here*/
+.admin_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.order_catalog{
+    display: table;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin_order_heading{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.id_heading{
+    margin: 5px;
+    margin-left: 150px;
+    color: #D70040;
+}
+
+.userid_heading{
+    margin-left: 64px;
+    color: #E97451;
+}
+
+.location_heading{
+    margin: 5px;
+    margin-left: 54px;
+    color: #D22B2B;
+}
+
+.total_heading{
+    margin: 5px;
+    margin-left: 54px;
+    color: #8B0000;
+}
+
+.ostatus_heading{
+    margin: 5px;
+    margin-left: 48px;
+    color: #CC5500;
+    
+}
+
+.date_heading{
+    margin: 5px;
+    margin-left: 42px;
+    color: #F88379;
+}
+
+.os{
+    display:flex;
+    font-size: 24px;
+    padding: 10px;
+    justify-content: flex-end;
+}
+
+.order_orderNo_list,.order_userNo_list,.order_location_list,.order_total_list,.order_status_list,.order_date_list{
+    display: table-cell;
+    padding: 5px;
+    margin-left: 60px;
+}
+
+.order_orderNo_list{
+    color:#0047AB;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 242px;
+}
+
+.order_userNo_list{
+    color: #00A36C;
+    font-weight: bold;
+    margin-left: 179px;
+}
+
+.order_location_list{
+    color: #088F8F;
+}
+
+.order_total_list{
+    color: #5D3FD3;
+    font-weight: bold;
+}
+
+.order_status_list{
+    color: #AA98A9;
+    font-weight: bold;
+    cursor: pointer ;
+}
+
+.order_date_list{
+    color: #673147;
+    font-weight: bold;
+}
+
+
+/* CSS For Admin Order Starts Here*/
+
+/* CSS For Admin Order Details Starts Here*/
+.admin_order{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.order_catalog{
+    display: table;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin_order_details_heading{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    font-size: 30px;
+    font-weight: bolder;
+    margin-top: 55px;
+}
+
+.order_prod_heading{
+       margin: 5px;
+    margin-left: 150px;
+    color: #E35335;
+}
+
+.order_qty_heading{
+    margin-left: 64px;
+    color: #FA5F55;
+}
+
+.order_price_heading{
+    margin: 5px;
+    margin-left: 54px;
+    color: #630330;
+}
+
+
+.ods{
+    display:flex;
+    font-size: 24px;
+    padding: 10px;
+    justify-content: flex-end;
+}
+
+.order_product_list,.order_quantity_list,.order_price_list{
+    display: table-cell;
+    padding: 5px;
+    margin-left: 60px;
+}
+
+.order_product_list{
+    color:#4682B4;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.order_quantity_list{
+    color: #BDB5D5;
+    font-weight: bold;
+    margin-left: 150px;
+}
+
+.order_price_list{
+    color: #96DED1;
+    margin-left: 130px;
+}
+
+
+/* CSS For Admin Order Details Starts Here*/

@@ -99,32 +99,56 @@ function proceedToPay() {
 }
 
 function calcCredit(data) {
-    const form=document.querySelector('.location_form');
-    const formData=new FormData(form);
+    const form = document.querySelector('.location_form');
+    const formData = new FormData(form);
+    const locations = document.querySelector('.locations');
+    // console.log(locations.value);
 
     var crd = data.credit;
     const pay_subTotal = document.querySelector('.checkout_subtotal');
     // console.log(parseInt(pay_subTotal.textContent));
     var subT = parseInt(pay_subTotal.textContent);
-    // if (crd > subT) {
-        console.log('payment done');
-        fetch('http://localhost:8085/backend/order.php', {
-            method: "POST",
-            mode: "cors",
-            credentials: "include",
-            body: formData
-        }).then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-                data.user && displayLoggedUser(data);
-                data.user && updateCart();
-            })
-            .catch(err => console.log(err));
-    // }
-    // else {
-    //     alert('Not Enough Credit');
-    // }
-    // if(crd>)
+    if (locations.value) {
+        if (crd > subT) {
+            var newCred = crd - subT;
+            // console.log(newCred);
+            console.log('payment done');
+            fetch('http://localhost:8085/backend/order.php', {
+                method: "POST",
+                mode: "cors",
+                credentials: "include",
+                body: formData
+            }).then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                    // data.user && displayLoggedUser(data);
+                    // data.user && updateCart();
+                })
+                .catch(err => console.log(err));
+
+            const payload = new URLSearchParams();
+            payload.append("credit", newCred);
+            payload.append("id", data.user);
+            fetch('http://localhost:8085/backend/order.php', {
+                method: "PATCH",
+                mode: "cors",
+                credentials: "include",
+                body: payload
+            }).then((res) => res.json())
+                .then((data) => {
+                    // console.log(data );
+                    checkLoginStatus();
+                    
+                })
+                .catch(err => console.log(err));
+        }
+        else {
+            alert('Not Enough Credit');
+        }
+    }
+    else {
+        alert('Location Cannot Be Empty');
+    }
 }
     // function getCredit(data){
     //     // console.log(data.credit);

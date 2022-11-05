@@ -3,37 +3,10 @@ require 'db.php';
 // require 'cart_user.php';
 
 if($_SERVER['REQUEST_METHOD']=="POST"){
-    // global $conn;
     $order=array();
-    // $location=$_POST['locations'];
     $user_id=getUserID();
-    // getLoggedUserCart();
     $cart_id=getCartID($user_id);
     getAllCartItems($cart_id);
-    // addOrder();
-
-    // echo json_encode($order);
-
-
-    
-    
-    
-    // $username=$_POST['user_id'];
-    // $password=$_POST['password'];
-    // $stmt='select * from user where user_id=? and password=?;';
-    // $prep_stmt=$conn->prepare($stmt);
-    // $prep_stmt->bind_param('ss', $username,$password);
-    // $prep_stmt->execute();
-    // $result=$prep_stmt->get_result();
-    // if($user_array=$result->fetch_assoc()){
-    //     $_SESSION['logged_user']['id']=$user_array['user_id'];
-    //     $_SESSION['logged_user']['credit']=$user_array['credit'];
-    //     echo json_encode(['user'=>$_SESSION['logged_user']['id'],'credit'=>$_SESSION['logged_user']['credit']]);
-    // }
-    // else{
-    //     echo json_encode(['error'=>'Invalid UserID or Password']);
-    // }
-    // $prep_stmt->close();
     exit();
 }
 
@@ -47,7 +20,6 @@ function getCartID($user_id){
     if($result=$conn->query($stmt)){
         if($result->num_rows){
             $cart_id=$result->fetch_assoc()['id'];
-            // print($cart_id);
         }
     }
     return $cart_id;
@@ -63,6 +35,7 @@ function getAllCartItems($cart_id){
         if($result->num_rows){
             while($row=$result->fetch_assoc()){
                 $id=$row['id'];
+                $prod_array[$id]['id']=$row['id'];
                 $prod_array[$id]['name']=$row['name'];
                 $prod_array[$id]['stock']=$row['stock'];
                 $prod_array[$id]['quantity']=$row['quantity'];
@@ -71,8 +44,6 @@ function getAllCartItems($cart_id){
             }
         }
     }
-    // addOrder($prod_array);
-    // return updateTotalLoggedCart($prod_array);
     updateTotalLoggedCart($prod_array);
 }
 
@@ -96,29 +67,46 @@ function updateTotalLoggedCart($prod_array){
     mysqli_query($conn,"insert into order_table (user_id,location,total,order_status,added_on) values 
         ('$user_id','$location','$total','$order_status','$added_on');");
 
-    // $stmt='insert into order_table (user_id,location,total,order_status,added_on) values 
-    //     ($user_id,$location,$total,$order_status,$added_on);';
-        // $prep_stmt=$conn->prepare($stmt);
-        // $prep_stmt->bind_param('iiiss',$user_id,$location,$total,$order_status,$added_on);
-        // $prep_stmt->execute();
-        // $prep_stmt->close();
-        // $conn->query($stmt);
-        // printf($conn->query($stmt));
-    // return $prod_array;
+    $order_id=mysqli_insert_id($conn);
+
+    foreach($prod_array as $item){
+        $id=$item['id'];
+        $quantity=$item['quantity'];
+        $price=$item['price'];
+        // printf($item['id']);
+        if($id!=0){
+        mysqli_query($conn,"insert into order_details (order_id,prod_id,quantity,price) values 
+        ('$order_id','$id','$quantity','$price');");
+    }
+}
 }
 
-// function addOrder($prod_array){
-//     global $conn;
-//     $prod_id= $_SESSION['id'];
-//     $quantity= $prod_array['quantity'];
-//     echo json_encode($order);
-//     // $location=$_POST['locations'];
-//     // $cart_id =getCartID(getUserID());
-//     // $stmt='insert into cart_item (cart_id,prod_id,quantity) values (?,?,?) on duplicate key update quantity= quantity+?;';
-//     // $prep_stmt=$conn->prepare($stmt);
-//     // $prep_stmt->bind_param('iiii',$cart_id,$prod_id,$quantity,$quantity);
-//     // $prep_stmt->execute();
-//     // $prep_stmt->close();
-//     // $cart=getAllCartItems($cart_id);
-//     // echo json_encode(['cart'=>$cart]);
-// }
+
+if($_SERVER['REQUEST_METHOD']==="GET"){
+    // $stmt = "SELECT ot.id,ot.user_id,ot.location,ot.total,ot.order_status,ot.added_on,p.name,od.quantity,od.price FROM `order_table` ot INNER JOIN order_details od on ot.id=od.order_id INNER join items p on p.id=od.prod_id ORDER by ot.added_on ASC;";
+    $stmt="SELECT * FROM `order_table`;";
+    if($result= $conn->query($stmt)){
+        $arr= array();
+        //while($name= $result->fetch_assoc()['name']){
+        while($name= $result->fetch_assoc()){
+            array_push($arr,$name); 
+        }
+        echo json_encode(['orders'=>$arr]);
+    }
+    else{
+        echo json_encode(['error'=>'an error occured']);
+    }
+    exit();
+}
+
+if($_SERVER['REQUEST_METHOD']==="PATCH"){
+    parse_str(file_get_contents('php://input'),$_PATCH);
+    // printf('bro');
+    // global $conn;
+    $credit= $_PATCH['credit'];
+    $user= $_PATCH['id'];
+    mysqli_query($conn,"UPDATE `user` SET `credit` = '$credit' WHERE `user`.`user_id` = '$user';");
+    
+    
+    exit();   
+}
