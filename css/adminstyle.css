@@ -482,4 +482,84 @@
 }
 
 
-/* CSS For Admin Order Details Starts Here*/
+/* CSS For Admin Order Details Ends Here*/
+
+/* CSS For Admin Products Starts Here*/
+.main_user_section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.user_catalog{
+    display: table;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin_user_heading{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.user_id_heading{
+    margin: 5px;
+    margin-left: -39px;
+    color: #800020;
+}
+
+.credit_heading{
+    margin-left: 64px;
+    color: #E97451;
+}
+
+.recharge_heading{
+    margin: 5px;
+    margin-left: 54px;
+    color: #986868;
+}
+
+.us{
+    display:flex;
+    font-size: 24px;
+    padding: 10px;
+    justify-content: flex-end;
+}
+
+.user_id_list,.user_credit_list,.credit_input,.credit_button,.prod_stock_list{
+    display: table-cell;
+    padding: 5px;
+    margin-left: 72px;
+}
+
+.user_id_list{
+    color:#6495ED;
+    font-weight: bold;
+}
+
+.user_credit_list{
+    color: #7DF9FF;
+    font-weight: bold;
+}
+
+.credit_input{
+    color: #088F8F;
+    width: 15%;
+    font-weight: bold;
+}
+
+.credit_button{
+    color: #4169E1;
+    font-weight: bold;
+    width: 15%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+/* CSS For Admin Products Ends Here*/

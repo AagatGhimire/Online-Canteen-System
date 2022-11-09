@@ -121,6 +121,10 @@ function navOrderClick(){
     window.open("adminindex.html", "_self");            
 }
 
+function navUserClick(){
+    window.open("adminuser.html", "_self");
+}
+
 // Code for headers ends here
 
 
